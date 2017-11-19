@@ -46,6 +46,12 @@
 			"revisionTime": "2017-11-13T18:07:20Z"
 		},
 		{
+			"checksumSHA1": "lZIXumbERzIOmFKVUmNtSWmr8Lc=",
+			"path": "github.com/johnidm/RD-shun",
+			"revision": "bbed870d7eadaa9c364c2851349b2e2b96bb5c6d",
+			"revisionTime": "2017-11-19T22:41:17Z"
+		},
+		{
 			"checksumSHA1": "w5RcOnfv5YDr3j2bd1YydkPiZx4=",
 			"path": "github.com/mattn/go-isatty",
 			"revision": "6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c",
