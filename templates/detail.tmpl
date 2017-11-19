@@ -1,0 +1,8 @@
+<html>
+	<h1>
+		Detail
+	</h1>
+    {{range $url := .urls}}
+        <li>{{$url.Title}}: {{$url.Url}} - {{$url.Date}}</li>
+    {{end}}
+</html>
