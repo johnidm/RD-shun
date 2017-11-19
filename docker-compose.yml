@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  app:
+    image: golang:1.9.2
+    volumes:
+      - .:/go/src/shun
+    working_dir: /go/src/shun
+    command: go run main.go
+    ports:
+      - "3000:3000"

@@ -1,0 +1,5 @@
+docker-compose run app go env
+
+docker-compose run app go test -v ./...
+
+docker-compose run app sh
