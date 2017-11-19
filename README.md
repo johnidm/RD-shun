@@ -1,6 +1,6 @@
 # Shiryu
 
-Api/Web application that manages user tracking.
+API/Web application that manages user tracking.
 
 [![Build Status](https://travis-ci.org/johnidm/RD-shun.svg?branch=master)](https://travis-ci.org/johnidm/RD-shun)
 
@@ -10,9 +10,19 @@ Api/Web application that manages user tracking.
 
 Make sure you have Go installed and GOPATH defined.
 
+I recommend you use [Go Version Manager](https://github.com/moovweb/gvm)
+
+Clone the project
+
 ```
 $ go get -u github.com/johnidm/RD-shun
 $ cd $GOPATH/src/github.com/johnidm/RD-shun
 ```
+
+Available commands
+
+- `make run`: Run the prject
+- `make build`: Build the prject
+- `make test`: Run all tests
 
 Your app should now be running on `localhost:8080`
