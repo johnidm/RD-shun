@@ -32,11 +32,10 @@ func main() {
     router.LoadHTMLGlob("./templates/*")
 
     router.Use(CORSMiddleware())
-
-    // router.Use(favicon.New("./favicon.ico"))
+    router.StaticFile("/favicon.ico", "./favicon.ico")
 
     router.GET("/", index)
-    router.GET("/:token", detail)
+    router.GET("/detail/:token", detail)
 
     v1 := router.Group("/api/v1/track")
     {
