@@ -69,7 +69,7 @@ func createTrackEmail(c *gin.Context) {
     
     insertTrackEmail(guid, json.Email)
 
-    c.JSON(http.StatusCreated, gin.H{"status": http.StatusCreated, "message": guid, "resourceId": json.Email})
+    c.JSON(http.StatusNoContent, gin.H{})
 }
 
 func createTrackUrl(c *gin.Context) { 
@@ -80,7 +80,7 @@ func createTrackUrl(c *gin.Context) {
 
     insertTrackNewUrl(guid, json)
 
-    c.JSON(http.StatusCreated, gin.H{"status": http.StatusCreated, "message": guid, "resourceId": json})
+    c.JSON(http.StatusNoContent, gin.H{})
 }
 
 func insertTrackEmail(guid Token, email Email) {
