@@ -1,0 +1,16 @@
+language: go
+
+node_js:  
+  - "1.9.2"
+
+jobs:
+  include:
+    - stage: test
+      script: make test
+    - stage: deploy to production
+      script: skip
+      deploy: &heroku
+        provider: heroku
+        app: rd-shun
+        api_key: $HEROKU_API_KEY
+      if: branch = master
