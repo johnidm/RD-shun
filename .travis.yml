@@ -5,8 +5,8 @@ node_js:
 
 jobs:
   include:
-    - stage: test
-      script: make test
+    # - stage: test
+    #   script: make test
     - stage: deploy to production
       script: skip
       deploy: &heroku

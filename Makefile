@@ -16,8 +16,7 @@ run:
 	go run ./main.go
 
 test:
-	# go test ./main_test.go
-	echo ">>"
+	go test ./main_test.go
 
 deps:
 	rm -dRf ./vendor/src
