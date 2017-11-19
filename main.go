@@ -2,7 +2,6 @@ package main
 
 import (
     "net/http"
-    "flag"
     "github.com/gin-gonic/gin"
 )
 
@@ -20,8 +19,7 @@ func main() {
         v1.GET("/url/:guid", createTrackUrl) 
     }
 
-    port := flag.String("port", "8000", "HTTP Port")
-    router.Run(":" + *port)
+    router.Run()
 }
 
 func index(c *gin.Context) {
