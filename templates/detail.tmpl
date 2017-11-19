@@ -1,8 +1,94 @@
-<html>
-	<h1>
-		Detail
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shun - Detail Contacts</title>
+
+    <style>
+
+        @import url(//fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900);
+        html,
+        body {
+                font-family: 'Roboto', sans-serif;
+                background: #fff;
+
+                width: 100%;
+                padding: 40px;
+                margin: 0;
+                color: #2E2E3C;
+                line-height: 24px;
+                -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+			padding: 20px;
+			max-width: 900px;
+			margin: 0 auto;
+		}
+
+        .card {
+            display: inline-block;
+            vertical-align: top;
+            width: 350px;
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+            background: #FFF;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            color: #272727;
+            border-radius: 2px;
+        }
+        .card .title {
+            line-height: 200px;
+            font-size: 24px;
+            font-weight: 300;
+        }
+        .card .content {
+            padding: 10px;
+            font-weight: 300;
+            border-radius: 0 0 2px 2px;
+        }
+        .card p {
+            margin: 0;
+        }
+        .card .action {
+            border-top: 1px solid rgba(160, 160, 160, 0.2);
+            padding: 20px;
+        }
+        .card a {
+            color: #272727;
+            margin-right: 10px;
+            -webkit-transition: color 0.3s ease;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <h1>
+		Detail contacts
 	</h1>
-    {{range $url := .urls}}
-        <li>{{$url.Title}}: {{$url.Url}} - {{$url.Date}}</li>
+
+    {{if .urls}}
+        {{range $url := .urls}}
+
+            <div class="card">  
+                <div class="action">
+                    <a>Access page: <b>{{$url.Title}}</b></a>
+                    <div class="content">
+                        <p>URL: <b>{{$url.Url}}</b> </p>
+                        <p>accessed in <b>{{$url.Date.Format "2006 Jan 02 15:04:05" }}</b></p>
+                    </div>
+                </div>
+            </div>
+        
+        {{end}}
+    {{else}}
+        <h3>There are no contacts details</h3>
     {{end}}
+
+</body>
 </html>
