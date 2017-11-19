@@ -2,7 +2,7 @@ package main
 
 import (
     "net/http"
-
+    "fmt"
     "time"
     "github.com/gin-gonic/gin"
 )
@@ -26,9 +26,9 @@ var emails = make(Emails)
 type Urls  map[Token][]UrlTrack
 var urls = make(Urls)
 
-func main() {
+func SetupRouter() *gin.Engine {
 
-    router := gin.Default()
+	router := gin.Default()
     router.LoadHTMLGlob("./templates/*")
 
     router.Use(CORSMiddleware())
@@ -42,6 +42,13 @@ func main() {
         v1.POST("/email/:guid", createTrackEmail)        
         v1.POST("/url/:guid", createTrackUrl) 
     }
+    
+    return router
+}
+
+func main() {
+
+    router := SetupRouter()
 
     router.Run()
 }
@@ -62,9 +69,9 @@ func detail(c *gin.Context) {
 
 func createTrackEmail(c *gin.Context) {
     guid := Token(c.Param("guid"))
-    
+    fmt.Printf("ss %s", c.Request.Body)
     var json EmailTrack    
-    c.Bind(&json) 
+    c.BindJSON(&json) 
     
     insertTrackEmail(guid, json.Email)
 
@@ -75,7 +82,7 @@ func createTrackUrl(c *gin.Context) {
     guid := Token(c.Param("guid"))
     
     var json UrlTrack
-    c.Bind(&json)
+    c.BindJSON(&json)
 
     insertTrackNewUrl(guid, json)
 

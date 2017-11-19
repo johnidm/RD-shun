@@ -16,7 +16,7 @@ run:
 	go run ./main.go
 
 test:
-	go test ./...
+	go test ./main_test.go
 
 deps:
 	rm -dRf ./vendor/src
