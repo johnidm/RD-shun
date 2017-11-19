@@ -1,5 +1,7 @@
 # Shiryu
 
+![](https://pm1.narvii.com/6400/1c55c6cbf4831e75b9f678e742a5212c6face3f6_128.jpg)
+
 API/Web application that manages user tracking.
 
 [![Build Status](https://travis-ci.org/johnidm/RD-shun.svg?branch=master)](https://travis-ci.org/johnidm/RD-shun)
