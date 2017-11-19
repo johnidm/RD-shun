@@ -83,6 +83,15 @@ func createTrackUrl(c *gin.Context) {
 }
 
 func insertTrackEmail(guid Token, email Email) {
+
+    if value, ok := emails[email]; ok {
+        for _, token := range value {
+            if token == guid {
+                return
+            }                
+        }        
+    }
+    
     emails[email] = append(emails[email], guid)
 }
 
