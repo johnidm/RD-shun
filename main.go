@@ -31,6 +31,8 @@ func main() {
     router := gin.Default()
     router.LoadHTMLGlob("./templates/*")
 
+    router.Use(CORSMiddleware())
+
     // router.Use(favicon.New("./favicon.ico"))
 
     router.GET("/", index)
@@ -89,4 +91,17 @@ func insertTrackNewUrl(guid Token, url UrlTrack) {
     urls[guid] = append(urls[guid], url)
 }
 
+func CORSMiddleware() gin.HandlerFunc {
+     return func(c *gin.Context) {
+         c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+         c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE, UPDATE")
+         c.Writer.Header().Set("Access-Control-Allow-Headers", "Origin, Content-Type, Content-Length, Accept-Encoding")
 
+         if c.Request.Method == "OPTIONS" {
+      
+             c.AbortWithStatus(200)
+         } else {
+             c.Next()
+         }
+     }
+ }
