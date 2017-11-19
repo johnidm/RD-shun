@@ -1,5 +1,14 @@
 <html>
 	<h1>
-		{{ .title }}
+		Index	
 	</h1>
+	{{ range $key, $value := .emails }}
+		<h2>{{ $key }}</h2>
+		<hr>
+		{{range $value}}
+			<li><a href="/{{.}}">{{.}}</a></li>
+		{{end}}
+
+	{{ end }}
+	
 </html>
