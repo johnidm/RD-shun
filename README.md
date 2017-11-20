@@ -4,7 +4,7 @@
 
 API/Web application that manages user tracking.
 
-[![Build Status](https://travis-ci.org/johnidm/RD-shun.svg?branch=master)](https://travis-ci.org/johnidm/RD-shun)
+[![Build Status](https://travis-ci.org/johnidm/RD-shun.svg?branch=master)](https://travis-ci.org/johnidm/RDshun)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://rd-shun.herokuapp.com/)
 
